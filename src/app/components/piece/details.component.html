@@ -1,0 +1,24 @@
+<div class="page">
+    <div class="container">
+      <!-- wait till piece is available -->
+        <!-- TASK:03: display list of piece segment (piece.segments is an array of name, id, from, to)
+        when clicking on one, display the details in a child component here (name it details.partial) -->
+  
+        <div class="flex-container">
+          <div class="flex-list">
+            <p>Here's a list of all the segments: </p>
+
+            @if(piece$ | async; as piece) {
+              <ol>  
+                <div *ngFor="let entry of piece.segments">
+                    <li (click)='showDetails(entry.name)'>{{entry.name}}</li>
+                </div>
+              </ol>
+            }
+          </div>
+            @if(chosenSegment$){
+              <piece-detail [segment$]="chosenSegment$" class="flex-details"></piece-detail>
+            }
+        </div>        
+    </div>
+  </div>

@@ -1,0 +1,14 @@
+<div class="page">
+  <div class="container">
+    <!-- use an if to assign to local variable to be used later. and to make sure it binds when available -->
+    <ul *ngIf="bits$ | async as bits">
+      <div *ngFor="let bit of bits">
+          <li>
+    <!-- TASK:03: turn this into a card partial component. with bit as input  -->
+            <bit-card [bit]="bit"></bit-card>
+          </li>
+      </div>
+  </ul>
+
+  </div>
+</div>

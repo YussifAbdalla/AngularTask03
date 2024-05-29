@@ -1,0 +1,23 @@
+<div class="page">
+    <div class="container">
+        <!-- TASK:03: display list of bit ingredients (bit.ingredients is an array of name, id, and quantity),
+        when clicking on one, display the details in a child component here (name it details.partial) -->
+          <div class="flex-container">
+            <div class="flex-list">
+              <p>Here's a list of all the ingredients: </p>
+              @if(bit$ | async; as bit) {
+                <ol>  
+                  <div *ngFor="let entry of bit.ingredients">
+                      <li (click)='showDetails(entry.name)'>{{entry.name}}</li>
+                  </div>
+                </ol>
+              }
+            </div>
+    
+            @if(chosenIngredient$){
+              <bit-detail [ingredient$]="chosenIngredient$" class="flex-details"></bit-detail>
+            }
+    
+          </div>
+    </div>
+</div>

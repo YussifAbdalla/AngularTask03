@@ -1,0 +1,11 @@
+<div class="page">
+    <div class="container">
+      @if(pieces$ | async; as pieces) {
+        <ul>  
+          <div *ngFor="let piece of pieces">
+              <li><a routerLink="/pieces/{{piece.id}}">{{piece.name}}</a></li>
+          </div>
+        </ul>
+      }
+    </div>
+</div>

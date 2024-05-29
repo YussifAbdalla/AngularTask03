@@ -1,0 +1,24 @@
+
+
+<main class="main">
+  <div class="content">
+    <h1>The dome</h1>
+
+    <!-- TASK:01: add style for navigation to make them appear on the same line -->
+    <nav>
+      <ul>
+        <!-- TASK:02 add another link for Account profile, aligned to the right. Without any links -->
+        <li><a routerLink="/">Home</a></li>
+        <!-- TASK:01: link to /bits and /pieces-->
+        <li><a routerLink="/bits">Bits</a></li>
+        <li><a routerLink="/pieces">Pieces</a></li>
+        <li class="nav-right">Profile</li>
+      </ul>
+    </nav>
+
+    <!-- TASK:01 add a message here, if time is < 12:00 show Good morning, else show Good afternoon. Make it green with first message, red with second message-->
+    <dm-greeting></dm-greeting>
+  </div>
+</main>
+
+<router-outlet />
